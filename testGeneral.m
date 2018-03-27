@@ -18,7 +18,7 @@ time = 0;
 % variables
 % numPointsInit = 7;
 % numBatteryLevels = 2;
-area = [300,0,110,0]; % value used for graphMakingNew [xmax, xmin,ymax,ymin]
+% area = [300,0,110,0]; % value used for graphMakingNew [xmax, xmin,ymax,ymin]
 rotation = 51; % value used for rotating in graphMakingNew, in degrees
 nodeArray = [];
 
@@ -26,8 +26,8 @@ for i = 1:numPointsInit*numBatteryLevels
     nodeArray(end+1) = i;
 end
 nodeArray = nodeArray';
-[G1, x1, y1, x0, y0] = graphMakingNew(numPointsInit, area, rotation);
-[G1] = createEdgesFull(G1, numPointsInit);
+% [G1, x1, y1, x0, y0] = graphMakingNew(numPointsInit, area, rotation);
+% [G1] = createEdgesFull(G1, numPointsInit);
 [T, x3d, y3d, z3d] = tableMaking(x1, y1, numBatteryLevels);
 
 % outputs
