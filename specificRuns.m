@@ -6,7 +6,7 @@ data = readData('sampleInput.txt') % get the size and shape from the data (this 
 [numClusters, ~] = size(data)
 x = [data(1,:) data(3,:)] % check if these are right
 y = [data(2,:) data(4,:)]
-
+maxDistance = 
 G = 0;
 % x = 0;
 % y = 0;
@@ -21,7 +21,7 @@ method = 1;     % 1 = GLNS, 0 = concorde
 
 
 filename = ['rando1'];
-[ansTime,gtspMatrix,gtspTime] = testGeneral(i, j, filename, tTO, tL, rRate, UGVS, G, x, y, method);
+[ansTime,gtspMatrix,gtspTime] = testGeneral(i, j, filename, tTO, tL, rRate, UGVS, G, x, y, method, maxDistance);
 
 
 

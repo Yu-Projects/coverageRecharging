@@ -31,7 +31,7 @@ h = scatter3(x3d, y3d, z3d);
 [v_Cluster] = makingV_cluster(numPointsInit, numBatteryLevels);
 v_Cluster = num2cell(v_Cluster);
 
-[v_Adj, v_Type, S1, T1, weights] = makingSTWv_AdjGeneral(area, x1, y1, numPointsInit, numBatteryLevels, v_Cluster, timeTO, timeL, rechargeRate, UGVSpeed);
+[v_Adj, v_Type, S1, T1, weights] = makingSTWv_AdjGeneral(maxDistance, x1, y1, numPointsInit, numBatteryLevels, v_Cluster, timeTO, timeL, rechargeRate, UGVSpeed);
 
 [xOut, yOut] = graphingCluster(x1, y1, numPointsInit, numBatteryLevels, S1, T1, 0, nodeArray, method);            % graph in cluster format
 

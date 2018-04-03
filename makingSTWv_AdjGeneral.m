@@ -7,7 +7,7 @@
 % OUTPUTS
 
 
-function [v_AdjNew, v_Type, sNew, tNew, weights] = makingSTWv_AdjGeneral(area, x, y, numPoints, numLevels, v_Cluster, timeTO, timeL, rechargeRate, UGVSpeed)
+function [v_AdjNew, v_Type, sNew, tNew, weights] = makingSTWv_AdjGeneral(maxDistance, x, y, numPoints, numLevels, v_Cluster, timeTO, timeL, rechargeRate, UGVSpeed)
 
 v_ClusterLevels = [];
 for i = 1:numPoints
@@ -19,7 +19,7 @@ v_ClusterLevels = v_ClusterLevels';
 
 % create all types of edges here
 % creating flying edges (only UAV and bat' < bat)
-[type1, allDistances] = makingSTWType1(area, x, y, numPoints, numLevels, v_Cluster, v_ClusterLevels);
+[type1, allDistances] = makingSTWType1(maxDistance, x, y, numPoints, numLevels, v_Cluster, v_ClusterLevels);
 [type2] = makingSTWType2(); % PUT PAUSE HERE and look at data
 [type3] = makingSTWType3();
 [type4] = makingSTWType4();
