@@ -20,6 +20,10 @@ v_ClusterLevels = v_ClusterLevels';
 % create all types of edges here
 % creating flying edges (only UAV and bat' < bat)
 [type1, allDistances] = makingSTWType1(area, x, y, numPoints, numLevels, v_Cluster, v_ClusterLevels);
+[type2] = makingSTWType2(); % PUT PAUSE HERE and look at data
+[type3] = makingSTWType3();
+[type4] = makingSTWType4();
+[type5] = makingSTWType5();
 
 % creating charging edges (UAV riding UGV and charging/ bat' >= bat)
 % [type2] = makingSTWType2(numPoints, numLevels, type1, v_Cluster, timeTO, timeL, allDistances, v_ClusterLevels, rechargeRate, UGVSpeed);
@@ -35,7 +39,7 @@ v_AdjNew(1:numOfTotalPoints, 1:numOfTotalPoints) = Inf;
 v_Type(1:numOfTotalPoints, 1:numOfTotalPoints) = 0;
 
 for i = 1:numberOfEdges
-    compare = [type1(i), type2(i), type3(i)]; % array of all types of edge
+    compare = [type1(i), type2(i), type3(i), type4(i), type5(i)]; % array of all types of edge
     [v_AdjNew(i), v_Type(i)]= min(compare);
 end
 
