@@ -12,7 +12,7 @@
 % clc;
 
 
-function [time,gtspWeightMatrix2, gtspTime] = testGeneral(numPointsInit, numBatteryLevels, filename, timeTO, timeL, rechargeRate, UGVSpeed, G1, x1, y1, method, maxDistance)
+function [time,gtspWeightMatrix2, gtspTime] = testGeneral(numPointsInit, numBatteryLevels, filename, timeTO, timeL, rechargeRate, UGVSpeed, G1, x1, y1, method, maxDistance, pathName)
 
 time = 0;
 rotation = 51; % value used for rotating in graphMakingNew, in degrees
@@ -40,7 +40,7 @@ tic;
 [finalMatrix, G_init, edgeWeightsFinal, finalTour, gtspWeightMatrix, gtspWeightMatrix2] = gtspSolver(v_Cluster, v_Adj, numPointsInit, numBatteryLevels, xOut, yOut, method);
 gtspTime = toc;
 
-f = fullfile('/home/klyu/lab/heterogenous_teams/Heterogeneous-Teams/', filename);
+f = fullfile(pathName, filename);
 save(f);
 close all;
 end

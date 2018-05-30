@@ -21,7 +21,8 @@ method = 1;     % 1 = GLNS, 0 = concorde
 
 
 filename = ['rando1'];
-[ansTime,gtspMatrix,gtspTime] = testGeneral(i, j, filename, tTO, tL, rRate, UGVS, G, x, y, method, maxDistance);
+pathName = '/home/klyu/lab/heterogenous_teams/Heterogeneous-Teams/'
+[ansTime,gtspMatrix,gtspTime] = testGeneral(i, j, filename, tTO, tL, rRate, UGVS, G, x, y, method, maxDistance, pathName);
 
 
 
