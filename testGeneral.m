@@ -12,7 +12,7 @@
 % clc;
 
 
-function [time,gtspWeightMatrix2, gtspTime] = testGeneral(numPointsInit, numBatteryLevels, filename, timeTO, timeL, rechargeRate, UGVSpeed, G1, x1, y1, method)
+function [time,gtspWeightMatrix2, gtspTime] = testGeneral(numPointsInit, numBatteryLevels, filename, timeTO, timeL, rechargeRate, UGVSpeed, G1, x1, y1, method, maxDistance)
 
 time = 0;
 rotation = 51; % value used for rotating in graphMakingNew, in degrees
