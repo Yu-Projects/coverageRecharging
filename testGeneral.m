@@ -12,7 +12,7 @@
 % clc;
 
 
-function [time,gtspWeightMatrix2, gtspTime] = testGeneral(numPointsInit, numBatteryLevels, filename, timeTO, timeL, rechargeRate, UGVSpeed, G1, x1, y1, method, maxDistance, pathName)
+function [time,gtspWeightMatrix2, gtspTime] = testGeneral(numPointsInit, numBatteryLevels, filename, timeTO, timeL, rechargeRate, UGVSpeed, G1, x, y, method, maxDistance, pathName)
 
 time = 0;
 rotation = 51; % value used for rotating in graphMakingNew, in degrees
@@ -22,6 +22,8 @@ for i = 1:numPointsInit*numBatteryLevels
     nodeArray(end+1) = i;
 end
 nodeArray = nodeArray';
+x1 = reshape(x, 1, [])
+y1 = reshape(y, 1, [])
 [T, x3d, y3d, z3d] = tableMaking(x1, y1, numBatteryLevels);
 
 % creates 3D plots
