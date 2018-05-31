@@ -1,0 +1,17 @@
+
+
+function [distance] = maxDistance(x, y)
+[h1, w1] = size(x);
+[h2, w2] = size(y);
+
+
+for i = 1 : h1*w1
+    for j = 1 : h1*w1
+        testPoint  = [x[i], y[i]; x[j], y[
+        distance = pdist(testPoint, 'euclidean')
+        
+    end
+end
+% distance = x + y
+distance = 0;
+end

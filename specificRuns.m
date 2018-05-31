@@ -1,12 +1,13 @@
 % specificRuns
 % this will run a specific case for if there's an error within "time"
 % variable
+clc; clear all; close all;
 
-data = readData('sampleInput.txt') % get the size and shape from the data (this will tell you number of clusters points and so on)
-[numClusters, ~] = size(data)
-x = [data(1,:) data(3,:)] % check if these are right
-y = [data(2,:) data(4,:)]
-maxDistance = 
+data = readData('sampleInput.txt'); % get the size and shape from the data (this will tell you number of clusters points and so on)
+[numClusters, ~] = size(data);
+x = [data(:,1) data(:,3)] % check if these are right
+y = [data(:,2) data(:,4)]
+max_Distance = maxDistance(x, y)
 G = 0;
 % x = 0;
 % y = 0;
@@ -22,7 +23,7 @@ method = 1;     % 1 = GLNS, 0 = concorde
 
 filename = ['rando1'];
 pathName = '/home/klyu/lab/heterogenous_teams/Heterogeneous-Teams/'
-[ansTime,gtspMatrix,gtspTime] = testGeneral(i, j, filename, tTO, tL, rRate, UGVS, G, x, y, method, maxDistance, pathName);
+[ansTime,gtspMatrix,gtspTime] = testGeneral(i, j, filename, tTO, tL, rRate, UGVS, G, x, y, method, max_Distance, pathName);
 
 
 
