@@ -16,11 +16,4 @@ for i = 1:numOfPoints/2
     end
 end
 
-for i = 1:numOfPoints/2
-    for j = 1:numLevels
-        V_cluster(count, :) = i;
-        count = count+1;
-    end
-end
-
 end
