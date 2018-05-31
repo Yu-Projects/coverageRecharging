@@ -37,7 +37,7 @@ totalPoints = numPoints * numLevels;
 tempv_AdjFinal = Inf(totalPoints);
 tempv_Adj(1:totalPoints, 1:numPoints) = 0;
 for i = 1:numPoints
-    fillArray = allDistancesRounded(i, :);
+    fillArray = allDistances(i, :);
     for j = 1:numLevels
         tempv_Adj((i-1)*numLevels+j, 1:numPoints) = fillArray;
     end
@@ -56,7 +56,7 @@ sNew = [];
 tNew = [];
 weights = [];
 matv_Cluster = cell2mat(v_Cluster);
-for i = 1:numPoints
+for i = 1:numPoints                     % TODO: this won't for for making the adjacany matrix. Need to find another way
     pointA = find(matv_Cluster == i);
     for j = 1:numPoints
         node = find(matv_Cluster == i, 1);
