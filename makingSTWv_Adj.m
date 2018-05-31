@@ -58,7 +58,7 @@ weights = [];
 matv_Cluster = cell2mat(v_Cluster);
 for i = 1:numPoints                     % TODO: this won't for for making the adjacency matrix. Need to find another way
     pointA = find(matv_Cluster == i);
-    for j = 1:numPoints
+    for j = 1:numPoints/2
         node = find(matv_Cluster == i, 1);
         numOfIterations = allDistancesRounded(i, j);
         % pointB = find(v_Cluster == j);
