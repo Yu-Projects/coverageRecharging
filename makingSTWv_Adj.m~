@@ -50,24 +50,24 @@ for i = 1:numPoints
     end
 end
 
-% pointA = [];
-% pointB = [];
+pointA = [];
+pointB = [];
 sNew = [];
 tNew = [];
 weights = [];
-matGroupedPoints = cell2mat(groupedPoints);
+matv_Clu = cell2mat(groupedPoints);
 for i = 1:numPoints                     % TODO: this won't for for making the adjacency matrix. Need to find another way
-%     pointA = find(matGroupedPoints == i);
+    pointA = find(matv_Cluster == i);
     for j = 1:numPoints
-        node = find(matGroupedPoints == i, 1);
+        node = find(matv_Cluster == i, 1);
         numOfIterations = allDistancesRounded(i, j);
         % pointB = find(v_Cluster == j);
         weightIJ = allDistances(i, j);
-        for k = 1:(numLevels-numOfIterations)
+        for k = 1:(numLevels-numOfIterations+1)
             if numOfIterations == 0 || i == j % you don't need both conditions because they do the same thing, but it helps me remember how things work
                 break;
             end
-            pointB = find(matGroupedPoints == j);
+            pointB = find(matv_Cluster == j);
             sNew(end+1) = node;
             pointB = circshift(pointB, -(numOfIterations+k-1));
             tNew(end+1) = pointB(1);
