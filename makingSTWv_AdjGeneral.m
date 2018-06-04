@@ -17,13 +17,22 @@ for i = 1:numPoints
 end
 v_ClusterLevels = v_ClusterLevels';
 
-% create all types of edges here
+% create all types of edges
 % creating flying edges (only UAV and bat' < bat)
-[type1, allDistances] = makingSTWType1(maxDistance, x, y, numPoints, numLevels, v_Cluster, v_ClusterLevels, groupedPoints);
-[type2] = makingSTWType2(); % PUT PAUSE HERE and look at data
-[type3] = makingSTWType3();
-[type4] = makingSTWType4();
-[type5] = makingSTWType5();
+% edge types: These edges are also internal of clusters
+[F, allDistances] = flying(maxDistance, x, y, numPoints, numLevels, v_Cluster, v_ClusterLevels, groupedPoints); % fly
+[DUF] = downUpFly(); % make these as the different combinations, such as downUpFly
+[DUFDU] = downUpFlyDownUp(); % downUpFlyDownUp
+[FDU] = flyDownUp(); % flyDownUp
+[DTU] = downTravelUp(); % downTravelUp
+
+% make these into functions for each type
+% edge type combos: These edges are only external edges
+typeAEdge = typeA(F) % combinations of edge types above
+typeBEdge = typeB(F, DUF)
+typeCEdge = typeC(F, DUFDU)
+typeDEdge = typeD(F, FDU)
+typeEEdge = typeE(F, DTU)
 
 % creating charging edges (UAV riding UGV and charging/ bat' >= bat)
 % [type2] = makingSTWType2(numPoints, numLevels, type1, v_Cluster, timeTO, timeL, allDistances, v_ClusterLevels, rechargeRate, UGVSpeed);
